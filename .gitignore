@@ -10,7 +10,8 @@
 /build
 
 # SCSS
-./src/**/*.css
+**/*.css
+**/*.map.*
 
 # misc
 .DS_Store
