@@ -2,11 +2,6 @@
   "name": "wiki-map-people",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts-ts": "2.17.0"
-  },
   "scripts": {
     "start-js": "react-scripts-ts start",
     "start": "npm-run-all -p watch-css start-js",
@@ -16,10 +11,16 @@
     "eject": "react-scripts-ts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "lint": "npm-run-all tslint stylelint",
     "tslint": "tslint -c tslint.json **/*.{ts,tsx}",
-    "lint-staged": "lint-staged --config .lintstagedrc",
     "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
+    "lint-staged": "lint-staged --config .lintstagedrc",
     "pretty": "prettier --write **/*.{js,ts,tsx,scss}"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts-ts": "2.17.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
