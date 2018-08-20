@@ -2,15 +2,36 @@
   "name": "wiki-map-people",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "lint": "eslint **/*.{js,jsx}",
+    "stylelint": "stylelint --config ./.stylelintrc --syntax scss --color **/*.scss",
+    "lint-staged": "lint-staged --config .lintstagedrc",
+    "pretty": "prettier --write **/*.{js,jsx,scss}"
+  },
+  "dependencies": {
+    "flow-bin": "^0.79.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "stylelint": "^9.5.0",
+    "stylelint-order": "^1.0.0",
+    "stylelint-scss": "^3.3.0"
   }
 }
