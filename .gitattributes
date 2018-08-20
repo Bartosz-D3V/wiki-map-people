@@ -3,5 +3,5 @@
 .git* text export-ignore
 *.rc text
 
-*.js eol=crlf
-*.jsx eol=crlf
+*.js eol=lf
+*.jsx eol=lf
