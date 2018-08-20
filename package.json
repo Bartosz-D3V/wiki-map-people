@@ -14,10 +14,14 @@
     "pretty": "prettier --write **/*.{js,jsx,scss}"
   },
   "dependencies": {
+    "@material-ui/core": "^1.5.1",
     "flow-bin": "^0.79.1",
+    "google-map-react": "^1.0.6",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "styled-components": "^3.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
