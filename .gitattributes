@@ -4,4 +4,4 @@
 *.rc text
 
 *.js eol=lf
-*.ts eol=lf
+*.jsx eol=lf
