@@ -9,10 +9,6 @@
 # production
 /build
 
-# SCSS
-**/*.css
-**/*.map.*
-
 # misc
 .DS_Store
 .env.local
