@@ -1,2 +1,3 @@
-**/*.map.*
 src/styles/reset/reset.css
+build/
+dist/
