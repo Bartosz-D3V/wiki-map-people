@@ -1,17 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Adapter from 'enzyme-adapter-react-16';
-import { configure, shallow } from 'enzyme';
 import CountryList from './CountryList';
 
 describe('CountryList component', () => {
-  let wrapper;
-
-  beforeAll(() => {
-    configure({ adapter: new Adapter() });
-    wrapper = shallow(<CountryList />);
-  });
-
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<CountryList />, div);
