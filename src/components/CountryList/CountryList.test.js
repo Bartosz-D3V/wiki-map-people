@@ -29,9 +29,9 @@ describe('CountryList component', () => {
     });
 
     it('should return empty array if provided value is empty', () => {
-      expect(wrapper.instance().getCountries('', countries)).toEqual([]);
-      expect(wrapper.instance().getCountries(null, countries)).toEqual([]);
-      expect(wrapper.instance().getCountries(undefined, countries)).toEqual([]);
+      expect(CountryList.getCountries('', countries)).toEqual([]);
+      expect(CountryList.getCountries(null, countries)).toEqual([]);
+      expect(CountryList.getCountries(undefined, countries)).toEqual([]);
     });
 
     it('should return filtered array', () => {
@@ -39,7 +39,7 @@ describe('CountryList component', () => {
       expectedCountries.push({ label: 'North Korea' });
       expectedCountries.push({ label: 'South Korea' });
 
-      expect(wrapper.instance().getCountries('Korea', countries)).toEqual(expectedCountries);
+      expect(CountryList.getCountries('Korea', countries)).toEqual(expectedCountries);
     });
   });
 });
