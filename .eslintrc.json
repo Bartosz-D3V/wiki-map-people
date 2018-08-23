@@ -25,6 +25,7 @@
         ]
       }
     ],
+    "class-methods-use-this": "warn",
     "linebreak-style": "off"
   }
 }
