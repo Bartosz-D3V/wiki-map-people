@@ -1,5 +1,3 @@
-import { emphasize } from '@material-ui/core/styles/colorManipulator';
-
 export default theme => ({
   input: {
     display: 'flex',
