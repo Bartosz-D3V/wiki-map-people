@@ -1,4 +1,3 @@
-// @flow
 export default [
   {
     label: 'Abkhazia',
@@ -798,4 +797,8 @@ export default [
     flagUrl:
       'https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg',
   },
-];
+].map(country => ({
+  value: country.label,
+  label: country.label,
+  dataFlag: country.flagUrl,
+}));
