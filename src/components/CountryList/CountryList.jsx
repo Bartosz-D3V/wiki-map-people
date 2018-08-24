@@ -8,20 +8,16 @@ import Countries from './Countries';
 import SubComponents from './SubComponents';
 import SubComponentsClasses from './SubComponentsClasses';
 
-type T = {};
+type T = {
+  classes: Object,
+  theme: Object,
+};
 const SelectWrapper = styled.div`
-  display: flex;
-  flex-flow: row;
-  justify-content: flex-start;
+  height: 50px;
+  width: 300px;
+  z-index: 2;
 `;
 class CountryList extends React.Component<T> {
-  static getCountries(input?: string, countries: Array<Object>): Array<Object> {
-    return countries.filter(
-      (val: Object): boolean =>
-        !!input && val.label.toLowerCase().indexOf(input.toLowerCase()) !== -1
-    );
-  }
-
   render() {
     const { classes, theme } = this.props;
 
@@ -40,7 +36,6 @@ class CountryList extends React.Component<T> {
             styles={selectStyles}
             options={Countries}
             components={SubComponents}
-            onChange={() => CountryList.getCountries(Countries)}
             placeholder="Search a country"
           />
         </NoSsr>

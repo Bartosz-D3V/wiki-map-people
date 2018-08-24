@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const Option = props => {
+const Option = (props: Object) => {
   const { innerRef, isFocused, isSelected, innerProps, children } = props;
   return (
     <MenuItem
@@ -24,7 +24,7 @@ const Option = props => {
 
 const inputComponent = ({ inputRef, ...props }) => <div ref={inputRef} {...props} />;
 
-const Control = props => {
+const Control = (props: Object) => {
   const { selectProps, innerRef, children, innerProps } = props;
   return (
     <TextField
@@ -43,7 +43,7 @@ const Control = props => {
   );
 };
 
-const NoOptionsMessage = props => {
+const NoOptionsMessage = (props: Object) => {
   const { selectProps, children, innerProps } = props;
   return (
     <Typography
@@ -56,7 +56,7 @@ const NoOptionsMessage = props => {
   );
 };
 
-const Placeholder = props => {
+const Placeholder = (props: Object) => {
   const { selectProps, children, innerProps } = props;
   return (
     <Typography color="textSecondary" className={selectProps.classes.placeholder} {...innerProps}>
@@ -65,7 +65,7 @@ const Placeholder = props => {
   );
 };
 
-const SingleValue = props => {
+const SingleValue = (props: Object) => {
   const { selectProps, children, innerProps } = props;
   return (
     <Typography className={selectProps.classes.singleValue} {...innerProps}>
@@ -74,12 +74,12 @@ const SingleValue = props => {
   );
 };
 
-const ValueContainer = props => {
+const ValueContainer = (props: Object) => {
   const { selectProps, children } = props;
   return <div className={selectProps.classes.valueContainer}>{children}</div>;
 };
 
-const Menu = props => {
+const Menu = (props: Object) => {
   const { selectProps, children, innerProps } = props;
   return (
     <Paper square className={selectProps.classes.paper} {...innerProps}>

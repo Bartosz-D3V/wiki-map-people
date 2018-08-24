@@ -27,6 +27,7 @@
     ],
     "class-methods-use-this": "warn",
     "react/prop-types": "off",
+    "react/prefer-stateless-function": "off",
     "linebreak-style": "off"
   }
 }
