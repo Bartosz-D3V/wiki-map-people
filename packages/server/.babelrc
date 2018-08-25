@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "env"
+  ],
+  "ignore": [
+    "./node_modules",
+    ".babelrc",
+    "package.json",
+    "*.log"
+  ]
+}
