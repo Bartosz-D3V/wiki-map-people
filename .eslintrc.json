@@ -1,7 +1,8 @@
 {
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "prettier"
   ],
   "parser": "babel-eslint",
   "plugins": [
@@ -24,6 +25,9 @@
         ]
       }
     ],
+    "class-methods-use-this": "warn",
+    "react/prop-types": "off",
+    "react/prefer-stateless-function": "off",
     "linebreak-style": "off"
   }
 }

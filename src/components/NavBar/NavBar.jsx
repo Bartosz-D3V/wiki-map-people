@@ -1,7 +1,9 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import CountryList from '../CountryList/CountryList';
 
 const AppNavBarWrapper = styled.div`
   flex-grow: 1;
@@ -10,7 +12,9 @@ const AppNavBarWrapper = styled.div`
 export default () => (
   <AppNavBarWrapper>
     <AppBar position="static" color="primary">
-      <Toolbar />
+      <Toolbar>
+        <CountryList />
+      </Toolbar>
     </AppBar>
   </AppNavBarWrapper>
 );
