@@ -23,15 +23,16 @@ before_install:
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
+  - yarn global add lerna
 
 install:
-  - yarn
+  - lerna bootstrap
 
 script:
   - yarn lint
-  - yarn stylelint
-  - yarn test
-  - yarn build
+  - lerna run stylelint
+  - lerna run test
+  - lerna run build
 
 notifications:
   email:
