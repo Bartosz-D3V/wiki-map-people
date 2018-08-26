@@ -6,6 +6,7 @@
     "pretty": "prettier --write **/*.{js,jsx,scss}"
   },
   "devDependencies": {
+    "eslint": "^5.4.0",
     "husky": "1.0.0-rc.13",
     "lerna": "^3.1.4",
     "lint-staged": "^7.2.2",
