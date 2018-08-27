@@ -1,5 +1,4 @@
-export default country => {
-  return `
+export default country => `
   PREFIX wd: <http://www.wikidata.org/entity/>
   PREFIX wdt: <http://www.wikidata.org/prop/direct/>
   PREFIX schema: <http://schema.org/>
@@ -17,4 +16,3 @@ export default country => {
     ?citizenship rdfs:label ?citizenshipLabel.
   } ?citizenship ?label "${country}".
   }`;
-};
