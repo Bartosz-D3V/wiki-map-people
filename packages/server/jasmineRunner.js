@@ -9,7 +9,7 @@ jasmine.loadConfig({
   random: true,
 });
 
-let context = (...args) => describe(...args);
+const context = (...args) => describe(...args);
 
 global.context = context;
 
