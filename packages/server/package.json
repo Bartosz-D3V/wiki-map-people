@@ -7,7 +7,7 @@
     "prebuild": "yarn clean",
     "build": "babel **/* --out-dir dist/ --copy-files",
     "test": "babel-node jasmineRunner.js",
-    "start": "yarn build && node ./dist/bin/www"
+    "start": "babel-node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
