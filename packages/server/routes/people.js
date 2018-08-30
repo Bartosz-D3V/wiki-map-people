@@ -22,7 +22,7 @@ router.get('/:country', (req, res) => {
       res.json(data).status(200);
     });
 
-    respose.on('error', err => {
+    response.on('error', err => {
       res.send(err).status(500);
     });
   });
