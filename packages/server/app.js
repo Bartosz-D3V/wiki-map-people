@@ -1,4 +1,4 @@
-import usersRouter from './routes/users';
+import peopleRouter from './routes/people';
 
 const express = require('express');
 const path = require('path');
@@ -13,6 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/users', usersRouter);
+app.use('/people', peopleRouter);
 
 export default app;
