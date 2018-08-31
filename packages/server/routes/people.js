@@ -1,3 +1,5 @@
+// @flow
+
 import express from 'express';
 import https from 'https';
 
@@ -12,7 +14,7 @@ router.get('/:country', (req, res) => {
   const query = getPeople(country);
   const fetchURL = getFetchURL(query);
 
-  let data;
+  let data: Object;
   https.get(fetchURL, response => {
     response.on('data', chunk => {
       data += chunk;

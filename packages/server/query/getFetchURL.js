@@ -1,1 +1,3 @@
-export default query => `https://query.wikidata.org/sparql?query=${query}&format=json`;
+// @flow
+
+export default (query: string) => `https://query.wikidata.org/sparql?query=${query}&format=json`;
