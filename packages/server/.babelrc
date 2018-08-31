@@ -1,6 +1,7 @@
 {
   "presets": [
-    "env"
+    "@babel/preset-env",
+    "@babel/preset-flow"
   ],
   "ignore": [
     "./node_modules",
