@@ -21,7 +21,10 @@ router.get('/:country', (req, res) => {
     });
 
     response.on('end', () => {
-      res.json(data).status(200);
+      res
+        .status(200)
+        .set('Content-Type', 'application/json')
+        .send(data);
     });
 
     response.on('error', err => {
