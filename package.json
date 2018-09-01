@@ -1,10 +1,16 @@
 {
+  "name": "wiki-map-people",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "flow": "flow",
     "lint": "eslint **/*.{js,jsx}",
     "lint-staged": "lint-staged --config .lintstagedrc",
-    "pretty": "prettier --write **/*.{js,jsx,scss}"
+    "pretty": "prettier --write **/*.{js,jsx,css}"
   },
+  "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^8.2.6",
     "eslint": "^5.4.0",
@@ -18,10 +24,5 @@
     "lerna": "^3.1.4",
     "lint-staged": "^7.2.2",
     "prettier": "^1.14.2"
-  },
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "name": "wiki-map-people"
+  }
 }
