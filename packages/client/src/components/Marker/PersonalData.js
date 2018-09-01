@@ -5,6 +5,7 @@ import Results from './Results';
 
 export default class {
   head: Head;
+
   results: Results;
 
   constructor(head: Head, results: Results) {
