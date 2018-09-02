@@ -1,4 +1,6 @@
-export default country => `
+// @flow
+
+export default (country: string) => `
   PREFIX wd: <http://www.wikidata.org/entity/>
   PREFIX wdt: <http://www.wikidata.org/prop/direct/>
   PREFIX schema: <http://schema.org/>

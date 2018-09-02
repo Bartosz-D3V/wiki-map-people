@@ -1,3 +1,5 @@
+// @flow
+
 import peopleRouter from './routes/people';
 
 const express = require('express');
