@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react';
 import Select from 'react-select';
 import NoSsr from '@material-ui/core/NoSsr';
@@ -8,9 +9,10 @@ import Countries from './Countries';
 import SubComponents from './SubComponents';
 import SubComponentsClasses from './SubComponentsClasses';
 
-type T = {
+declare type T = {
   classes: Object,
   theme: Object,
+  onClick: Function,
 };
 const SelectWrapper = styled.div`
   height: 50px;
@@ -18,6 +20,12 @@ const SelectWrapper = styled.div`
   z-index: 2;
 `;
 class CountryList extends React.Component<T> {
+  handleCountrySelect(event) {
+    const { value } = event;
+    const { onClick } = this.props;
+    onClick(value);
+  }
+
   render() {
     const { classes, theme } = this.props;
 
@@ -37,6 +45,8 @@ class CountryList extends React.Component<T> {
             options={Countries}
             components={SubComponents}
             placeholder="Search a country"
+            onChange={event => this.handleCountrySelect(event)}
+            {...this.props}
           />
         </NoSsr>
       </SelectWrapper>
