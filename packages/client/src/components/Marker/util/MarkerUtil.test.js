@@ -1,5 +1,5 @@
 import MarkerUtil from './MarkerUtil';
-import Coords from '../domain/Coords';
+import Coords from '../../../shared/domain/Coords';
 
 describe('MartkerUtil', () => {
   describe('formatCoords function', () => {

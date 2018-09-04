@@ -6,22 +6,22 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CountryList from '../CountryList/CountryList';
 
-declare type T = {};
+declare type T = {
+  onClick: Function,
+};
 const AppNavBarWrapper = styled.div`
   flex-grow: 1;
   width: 100vw;
 `;
 export default class NavBar extends React.Component<T> {
-  static handleCountrySelect(country: string): string {
-    return country;
-  }
-
   render() {
+    const { onClick } = this.props;
+
     return (
       <AppNavBarWrapper>
         <AppBar position="static" color="primary">
           <Toolbar>
-            <CountryList onClick={NavBar.handleCountrySelect} {...this.props} />
+            <CountryList onClick={onClick} {...this.props} />
           </Toolbar>
         </AppBar>
       </AppNavBarWrapper>
