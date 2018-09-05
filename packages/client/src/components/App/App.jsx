@@ -23,15 +23,16 @@ export default class App extends React.Component<T, State> {
   }
 
   handleCountrySelect(country: string): void {
-    // eslint-disable-next-line react/no-unused-state
     this.setState({ selectedCountry: country });
   }
 
   render() {
+    const { associatedPeople } = this.state;
+
     return (
       <AppContainer>
         <NavBar onClick={country => this.handleCountrySelect(country)} {...this.props} />
-        <Map />
+        <Map associatedPeople={associatedPeople} />
       </AppContainer>
     );
   }
