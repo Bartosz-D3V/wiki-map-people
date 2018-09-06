@@ -9,8 +9,7 @@ import WikiData from '../../shared/domain/WikiData';
 
 declare type T = {};
 declare type State = {
-  selectedCountry: string,
-  associatedPeople: Array<WikiData>,
+  associatedPeople: Results,
 };
 const AppContainer = styled.div`
   overflow: hidden;
@@ -23,7 +22,9 @@ export default class App extends React.Component<T, State> {
   }
 
   handleCountrySelect(country: string): void {
-    this.setState({ selectedCountry: country });
+    App.fetchPeople(country).then((data: Results) => {
+      this.setState({ associatedPeople: data });
+    });
   }
 
   render() {
