@@ -1,11 +1,11 @@
-import WikiData from './WikiData';
-
 // @flow
+
+import WikiData from './WikiData';
 
 export default class {
   bindings: Array<WikiData>;
 
-  constructor(bingings: Array<WikiData>) {
-    this.bindings = this.bindings;
+  constructor(bindings: Array<WikiData>) {
+    this.bindings = bindings;
   }
 }

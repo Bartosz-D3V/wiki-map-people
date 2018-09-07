@@ -17,4 +17,4 @@ export default (country: string) => `
     ?pob rdfs:label ?placeOfBirth.
     ?citizenship rdfs:label ?citizenshipLabel.
   } ?citizenship ?label "${country}".
-} LIMIT 1`;
+}`;
