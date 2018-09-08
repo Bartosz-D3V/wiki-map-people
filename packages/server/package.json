@@ -5,9 +5,10 @@
   "scripts": {
     "clean": "rm -rf dist/",
     "prebuild": "yarn clean",
-    "build": "babel **/* --out-dir dist/ --copy-files",
+    "build": "babel . --out-dir dist/ --copy-files",
     "test": "babel-node jasmineRunner.js",
-    "start": "babel-node ./bin/www"
+    "prestart": "yarn build",
+    "start": "node ./dist/bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
