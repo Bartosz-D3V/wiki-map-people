@@ -15,7 +15,7 @@ const AppContainer = styled.div`
 `;
 export default class App extends React.Component<T, State> {
   static async fetchPeople(country: string): Promise<Array<PersonalInfo>> {
-    const response = await fetch(`localhost:8080/people/${country}`);
+    const response = await fetch(`http://localhost:8080/people/${country}`);
     return response.json();
   }
 
