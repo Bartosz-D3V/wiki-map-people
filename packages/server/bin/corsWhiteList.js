@@ -3,8 +3,7 @@
 const whitelist: Array<string> = ['http://localhost:3000'];
 
 export default {
-  origin: function(origin: string, callback: Function) {
-    console.log(origin);
+  origin(origin: string, callback: Function) {
     if (whitelist.includes(origin)) {
       callback(null, true);
     } else {
