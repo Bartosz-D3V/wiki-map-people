@@ -19,6 +19,10 @@ export default class App extends React.Component<T, State> {
     return response.json();
   }
 
+  state = {
+    associatedPeople: [],
+  };
+
   handleCountrySelect(country: string): void {
     App.fetchPeople(country).then((data: Array<PersonalInfo>) => {
       this.setState({ associatedPeople: data });

@@ -1,6 +1,6 @@
 // @flow
 
-import Coords from '../domain/Coords';
+import Coords from '../../domain/Coords';
 
 export default (coords: string): Coords => {
   const splittedPoint: Array<string> = coords.split(' ');
