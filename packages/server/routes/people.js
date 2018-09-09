@@ -15,18 +15,17 @@ router.get('/:country', (req, res) => {
   const query = getPeople(country);
   const fetchURL = getFetchURL(query);
 
-  let data;
+  let data = '';
   https.get(fetchURL, response => {
     response.on('data', chunk => {
       data += chunk;
     });
 
     response.on('end', () => {
-      console.log(data);
       res
         .status(200)
         .set('Content-Type', 'application/json')
-        .send(formatWikiResponse(data));
+        .send(formatWikiResponse(JSON.parse(data)));
     });
 
     response.on('error', err => {
