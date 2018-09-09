@@ -3,28 +3,30 @@
 import express from 'express';
 import https from 'https';
 
-import getPeople from '../query/getPeople';
-import getFetchURL from '../query/getFetchURL';
+import getPeople from '../util/getPeople/getPeople';
+import getFetchURL from '../util/getFetchURL/getFetchURL';
+import formatWikiResponse from '../util/formatWikiResponse/formatWikiResponse';
 
 const router = express.Router();
 
 /* GET people listing by nationality. */
 router.get('/:country', (req, res) => {
-  const country = req.param('country');
+  const { country } = req.params;
   const query = getPeople(country);
   const fetchURL = getFetchURL(query);
 
-  let data: Object;
+  let data;
   https.get(fetchURL, response => {
     response.on('data', chunk => {
       data += chunk;
     });
 
     response.on('end', () => {
+      console.log(data);
       res
         .status(200)
         .set('Content-Type', 'application/json')
-        .send(data);
+        .send(formatWikiResponse(data));
     });
 
     response.on('error', err => {

@@ -3,18 +3,18 @@
 import Coords from './Coords';
 
 export default class {
-  fullName: string;
-
-  placeOfBirth: string;
-
   coords: Coords;
 
   article: string;
 
-  constructor(fullName: string, placeOfBirth: string, coords: Coords, article: string) {
-    this.fullName = fullName;
-    this.placeOfBirth = placeOfBirth;
+  fullName: string;
+
+  placeOfBirth: string;
+
+  constructor(coords: Coords, article: string, fullName: string, placeOfBirth: string) {
     this.coords = coords;
     this.article = article;
+    this.fullName = fullName;
+    this.placeOfBirth = placeOfBirth;
   }
 }
