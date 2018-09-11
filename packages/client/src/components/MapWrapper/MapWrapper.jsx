@@ -20,10 +20,10 @@ declare type T = {
 export class MapWrapper extends React.Component<T> {
   static getMarkers(associatedPeople: Array<PersonalInfo>): any {
     if (!associatedPeople) return null;
-    return associatedPeople.map((personalInfo: PersonalInfo) => {
+    return associatedPeople.map((personalInfo: PersonalInfo, i: number) => {
       const { latitude, longtitude } = personalInfo.coords;
       return (
-        <Marker key={personalInfo.article} position={[latitude, longtitude]}>
+        <Marker key={`${personalInfo.article}-${i}`} position={[latitude, longtitude]}>
           <Popup>Test</Popup>
         </Marker>
       );
@@ -36,7 +36,7 @@ export class MapWrapper extends React.Component<T> {
     return (
       <LeafletWrapper center={mapCenter} zoom={zoomLevel}>
         <TileLayer url={stamenTonerTiles} />
-        {MapWrapper.getMarkers(associatedPeople)};
+        {MapWrapper.getMarkers(associatedPeople)}
       </LeafletWrapper>
     );
   }
