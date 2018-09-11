@@ -25,6 +25,7 @@
         ]
       }
     ],
+    "react/no-array-index-key": "off",
     "import/prefer-default-export": "warn",
     "class-methods-use-this": "warn",
     "react/prop-types": "off",
