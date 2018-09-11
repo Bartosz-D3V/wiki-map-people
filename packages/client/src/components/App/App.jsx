@@ -2,9 +2,9 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Map from '../Map/Map';
 import NavBar from '../NavBar/NavBar';
 import PersonalInfo from '../../domain/PersonalInfo';
+import { MapWrapper } from '../MapWrapper/MapWrapper';
 
 declare type T = {};
 declare type State = {
@@ -35,7 +35,7 @@ export default class App extends React.Component<T, State> {
     return (
       <AppContainer>
         <NavBar onClick={country => this.handleCountrySelect(country)} {...this.props} />
-        <Map associatedPeople={associatedPeople} />
+        <MapWrapper associatedPeople={associatedPeople} />
       </AppContainer>
     );
   }

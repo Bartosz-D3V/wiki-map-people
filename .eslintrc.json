@@ -25,6 +25,7 @@
         ]
       }
     ],
+    "import/prefer-default-export": "warn",
     "class-methods-use-this": "warn",
     "react/prop-types": "off",
     "react/prefer-stateless-function": "off",
