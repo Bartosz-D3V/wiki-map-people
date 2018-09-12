@@ -2,36 +2,40 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Map from '../Map/Map';
 import NavBar from '../NavBar/NavBar';
-import Results from '../../shared/domain/Results';
-import WikiData from '../../shared/domain/WikiData';
+import PersonalInfo from '../../domain/PersonalInfo';
+import { MapWrapper } from '../MapWrapper/MapWrapper';
 
 declare type T = {};
 declare type State = {
-  selectedCountry: string,
-  associatedPeople: Array<WikiData>,
+  associatedPeople: Array<PersonalInfo>,
 };
 const AppContainer = styled.div`
   overflow: hidden;
 `;
 export default class App extends React.Component<T, State> {
-  static async fetchPeople(country: string): Promise<Results> {
-    const response = await fetch(`localhost:8080/people/${country}`);
-    const data = await response.json();
-    return data;
+  static async fetchPeople(country: string): Promise<Array<PersonalInfo>> {
+    const response = await fetch(`http://localhost:8080/people/${country}`);
+    return response.json();
   }
 
+  state = {
+    associatedPeople: [],
+  };
+
   handleCountrySelect(country: string): void {
-    // eslint-disable-next-line react/no-unused-state
-    this.setState({ selectedCountry: country });
+    App.fetchPeople(country).then((data: Array<PersonalInfo>) => {
+      this.setState({ associatedPeople: data });
+    });
   }
 
   render() {
+    const { associatedPeople } = this.state;
+
     return (
       <AppContainer>
         <NavBar onClick={country => this.handleCountrySelect(country)} {...this.props} />
-        <Map />
+        <MapWrapper associatedPeople={associatedPeople} />
       </AppContainer>
     );
   }
