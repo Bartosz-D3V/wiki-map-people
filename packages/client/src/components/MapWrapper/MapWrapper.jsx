@@ -9,22 +9,33 @@ const LeafletWrapper = styled(Map)`
   width: 100vw;
   z-index: 1;
 `;
-const mapCenter = [39.9528, -75.1638];
-const zoomLevel = 12;
+const mapCenter = [20, 0];
+const zoomLevel = 3;
+const minZoom = 3;
 const stamenTonerTiles = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
 declare type T = {
   associatedPeople: Array<PersonalInfo>,
 };
 
-export class MapWrapper extends React.Component<T> {
+const hStyle = {
+  textAlign: 'center',
+};
+
+export default class MapWrapper extends React.Component<T> {
   static getMarkers(associatedPeople: Array<PersonalInfo>): any {
     if (!associatedPeople) return null;
     return associatedPeople.map((personalInfo: PersonalInfo, i: number) => {
       const { latitude, longtitude } = personalInfo.coords;
       return (
-        <Marker key={`${personalInfo.article}-${i}`} position={[latitude, longtitude]}>
-          <Popup>Test</Popup>
+        <Marker key={`${personalInfo.article}-${i}`} position={[longtitude, latitude]}>
+          <Popup>
+            <h2 style={hStyle}>{personalInfo.fullName}</h2>
+            <h3 style={hStyle}>{personalInfo.placeOfBirth}</h3>
+            <h3 style={hStyle}>
+              <a href={personalInfo.article}>Wikipedia article</a>
+            </h3>
+          </Popup>
         </Marker>
       );
     });
@@ -34,7 +45,7 @@ export class MapWrapper extends React.Component<T> {
     const { associatedPeople } = this.props;
 
     return (
-      <LeafletWrapper center={mapCenter} zoom={zoomLevel}>
+      <LeafletWrapper center={mapCenter} zoom={zoomLevel} minZoom={minZoom}>
         <TileLayer url={stamenTonerTiles} />
         {MapWrapper.getMarkers(associatedPeople)}
       </LeafletWrapper>
