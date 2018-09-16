@@ -8,7 +8,9 @@
     "flow": "flow",
     "lint": "eslint **/*.{js,jsx}",
     "lint-staged": "lint-staged --config .lintstagedrc",
-    "pretty": "prettier --write **/*.{js,jsx,css}"
+    "pretty": "prettier --write **/*.{js,jsx,css}",
+    "prebootstrap": "cd packages/shared && npm run build && npm link",
+    "bootstrap": "lerna bootstrap"
   },
   "dependencies": {},
   "devDependencies": {

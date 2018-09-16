@@ -1,19 +1,19 @@
+import PersonalInfo from 'shared/domain/PersonalInfo';
+import Coords from 'shared/domain/Coords';
 import SPARQLResult from '../../domain/SPARQLResult';
 import Head from '../../domain/Head';
 import Results from '../../domain/Results';
 import WikiResultHead from '../../domain/WikiResultHead';
-import PersonalInfo from '../../domain/PersonalInfo';
-import Coords from '../../domain/Coords';
 import formatWikiResponse from './formatWikiResponse';
 import WikiData from '../../domain/WikiData';
 
-const createMockSPARQLResult = (coords, article, fullName, pob) => {
+const createMockSPARQLResult = (fullName, pob, coords, article) => {
   const head = new Head([]);
   const mockPersonData = new WikiData(
-    new WikiResultHead('literal', coords),
-    new WikiResultHead('literal', article),
     new WikiResultHead('literal', fullName),
-    new WikiResultHead('literal', pob)
+    new WikiResultHead('literal', pob),
+    new WikiResultHead('literal', coords),
+    new WikiResultHead('literal', article)
   );
   const wikiDataArr = [mockPersonData];
   const results = new Results(wikiDataArr);
@@ -21,19 +21,19 @@ const createMockSPARQLResult = (coords, article, fullName, pob) => {
 };
 
 describe('formatWikiResponse', () => {
+  const mockData = createMockSPARQLResult(
+    'Jack Sparrow',
+    'Caribbean',
+    'Point(13.733333333 51.033333333)',
+    'mockURL'
+  );
   it('should return formatted wiki response', () => {
-    const mockData = createMockSPARQLResult(
-      'Point(13.733333333 51.033333333)',
-      'mockURL',
-      'Jack Sparrow',
-      'Caribbean'
-    );
     const expectedResults = [
       new PersonalInfo(
-        new Coords(13.733333333, 51.033333333),
-        'mockURL',
         'Jack Sparrow',
-        'Caribbean'
+        'Caribbean',
+        new Coords(13.733333333, 51.033333333),
+        'mockURL'
       ),
     ];
     const actualResults = formatWikiResponse(mockData);

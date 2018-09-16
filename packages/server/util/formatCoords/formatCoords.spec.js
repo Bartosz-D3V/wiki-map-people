@@ -1,4 +1,4 @@
-import Coords from '../../domain/Coords';
+import Coords from 'shared/domain/Coords';
 import formatCoords from './formatCoords';
 
 describe('formatCoords function', () => {
