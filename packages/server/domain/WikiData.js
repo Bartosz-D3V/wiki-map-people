@@ -3,23 +3,23 @@
 import WikiResultHead from './WikiResultHead';
 
 export default class {
-  coords: WikiResultHead;
-
-  article: WikiResultHead;
-
   fullName: WikiResultHead;
 
   placeOfBirth: WikiResultHead;
 
+  coords: WikiResultHead;
+
+  article: WikiResultHead;
+
   constructor(
-    coords: WikiResultHead,
-    article: WikiResultHead,
     fullName: WikiResultHead,
-    placeOfBirth: WikiResultHead
+    placeOfBirth: WikiResultHead,
+    coords: WikiResultHead,
+    article: WikiResultHead
   ) {
-    this.coords = coords;
-    this.article = article;
     this.fullName = fullName;
     this.placeOfBirth = placeOfBirth;
+    this.coords = coords;
+    this.article = article;
   }
 }

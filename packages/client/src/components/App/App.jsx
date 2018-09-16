@@ -2,8 +2,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import PersonalInfo from 'shared/domain/PersonalInfo';
 import NavBar from '../NavBar/NavBar';
-import PersonalInfo from '../../domain/PersonalInfo';
 import MapWrapper from '../MapWrapper/MapWrapper';
 
 declare type T = {};

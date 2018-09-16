@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import PersonalInfo from '../../domain/PersonalInfo';
+import PersonalInfo from 'shared/domain/PersonalInfo';
 
 const LeafletWrapper = styled(Map)`
   height: 100vh;
