@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import MarkerClusterGroup from 'react-leaflet-markercluster';
 import PersonalInfo from 'shared/domain/PersonalInfo';
 
 const LeafletWrapper = styled(Map)`
@@ -12,6 +13,8 @@ const LeafletWrapper = styled(Map)`
 const mapCenter = [20, 0];
 const zoomLevel = 3;
 const minZoom = 3;
+const maxZoom = 15;
+const maxClusterRadius = 20;
 const stamenTonerTiles = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
 declare type T = {
@@ -45,9 +48,17 @@ export default class MapWrapper extends React.Component<T> {
     const { associatedPeople } = this.props;
 
     return (
-      <LeafletWrapper center={mapCenter} zoom={zoomLevel} minZoom={minZoom}>
+      <LeafletWrapper
+        center={mapCenter}
+        zoom={zoomLevel}
+        minZoom={minZoom}
+        maxZoom={maxZoom}
+        preferCanvas
+      >
         <TileLayer url={stamenTonerTiles} />
-        {MapWrapper.getMarkers(associatedPeople)}
+        <MarkerClusterGroup maxClusterRadius={maxClusterRadius}>
+          {MapWrapper.getMarkers(associatedPeople)}
+        </MarkerClusterGroup>
       </LeafletWrapper>
     );
   }
