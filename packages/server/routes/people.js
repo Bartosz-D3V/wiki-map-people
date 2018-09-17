@@ -2,6 +2,9 @@
 
 import express from 'express';
 import https from 'https';
+import type { $Request } from 'express';
+import type { $Response } from 'express';
+import type { $Next } from 'express';
 
 import getPeople from '../util/getPeople/getPeople';
 import getFetchURL from '../util/getFetchURL/getFetchURL';
@@ -10,7 +13,7 @@ import formatWikiResponse from '../util/formatWikiResponse/formatWikiResponse';
 const router = express.Router();
 
 /* GET people listing by nationality. */
-router.get('/:country', (req, res) => {
+router.get('/:country', (req: $Request, res: $Response) => {
   const { country } = req.params;
   const query = getPeople(country);
   const fetchURL = getFetchURL(query);
