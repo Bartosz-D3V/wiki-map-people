@@ -6,10 +6,11 @@ import MapWrapper from './MapWrapper';
 
 describe('MapWrapper', () => {
   const person1 = new PersonalInfo('Donnie Darko', 'USA', new Coords(1, 1), 'localhost');
+  const props = { associatedPeople: [person1] };
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<MapWrapper />, div);
+    ReactDOM.render(<MapWrapper {...props} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
