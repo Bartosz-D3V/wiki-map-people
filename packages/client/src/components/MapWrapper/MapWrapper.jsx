@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -56,9 +57,11 @@ export default class MapWrapper extends React.Component<T> {
         preferCanvas
       >
         <TileLayer url={stamenTonerTiles} />
-        <MarkerClusterGroup maxClusterRadius={maxClusterRadius}>
-          {MapWrapper.getMarkers(associatedPeople)}
-        </MarkerClusterGroup>
+        {associatedPeople.length && (
+          <MarkerClusterGroup maxClusterRadius={maxClusterRadius}>
+            {MapWrapper.getMarkers(associatedPeople)}
+          </MarkerClusterGroup>
+        )}
       </LeafletWrapper>
     );
   }
