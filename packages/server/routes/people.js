@@ -1,10 +1,7 @@
 // @flow
 
-import express from 'express';
+import express, { $Request, $Response } from 'express';
 import https from 'https';
-import type { $Request } from 'express';
-import type { $Response } from 'express';
-import type { $Next } from 'express';
 
 import getPeople from '../util/getPeople/getPeople';
 import getFetchURL from '../util/getFetchURL/getFetchURL';
