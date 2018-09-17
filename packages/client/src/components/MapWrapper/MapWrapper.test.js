@@ -9,7 +9,7 @@ describe('MapWrapper', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<MapWrapper associatedPeople={[person1]} />, div);
+    ReactDOM.render(<MapWrapper />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });

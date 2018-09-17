@@ -46,7 +46,7 @@ export default class MapWrapper extends React.Component<T> {
   }
 
   render() {
-    const { associatedPeople } = this.props;
+    const { associatedPeople = [] } = this.props;
 
     return (
       <LeafletWrapper
@@ -57,7 +57,7 @@ export default class MapWrapper extends React.Component<T> {
         preferCanvas
       >
         <TileLayer url={stamenTonerTiles} />
-        {associatedPeople && (
+        {associatedPeople.length && (
           <MarkerClusterGroup maxClusterRadius={maxClusterRadius}>
             {MapWrapper.getMarkers(associatedPeople)}
           </MarkerClusterGroup>
