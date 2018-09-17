@@ -10,7 +10,7 @@
     "lint-staged": "lint-staged --config .lintstagedrc",
     "pretty": "prettier --write **/*.{js,jsx,css}",
     "prebootstrap": "cd packages/shared && npm run build && npm link",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap --no-package-lock"
   },
   "dependencies": {},
   "devDependencies": {
