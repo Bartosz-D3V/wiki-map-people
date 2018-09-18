@@ -1,13 +1,7 @@
 {
-  "extends": [
-    "airbnb",
-    "plugin:flowtype/recommended",
-    "prettier"
-  ],
+  "extends": ["airbnb", "plugin:flowtype/recommended", "prettier"],
   "parser": "babel-eslint",
-  "plugins": [
-    "flowtype"
-  ],
+  "plugins": ["flowtype"],
   "env": {
     "browser": true,
     "node": true,
@@ -19,10 +13,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "react/no-array-index-key": "off",

@@ -1,6 +1,6 @@
 {
   "linters": {
-    "*.{js,jsx,scss}": [
+    "*.{js,jsx,css,json,md,yml}": [
       "npm run pretty",
       "git add"
     ],
