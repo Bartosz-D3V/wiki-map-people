@@ -620,7 +620,7 @@ export default [
     flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Saint_Lucia.svg',
   },
   {
-    label: 'Saint Vincent and Grenadines',
+    label: 'Saint Vincent and the Grenadines ',
     flagUrl:
       'https://upload.wikimedia.org/wikipedia/commons/6/6d/Flag_of_Saint_Vincent_and_the_Grenadines.svg',
   },
@@ -797,8 +797,15 @@ export default [
     flagUrl:
       'https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg',
   },
-].map(country => ({
-  value: country.label,
-  label: country.label,
-  dataFlag: country.flagUrl,
-}));
+  {
+    label: 'United States of America ',
+    flagUrl:
+      'https://en.wikipedia.org/wiki/Flag_of_the_United_States#/media/File:Flag_of_the_United_States.svg',
+  },
+]
+  .map(country => ({
+    value: country.label,
+    label: country.label,
+    dataFlag: country.flagUrl,
+  }))
+  .sort();
