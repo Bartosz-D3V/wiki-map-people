@@ -801,10 +801,4 @@ export default [
     label: 'United States of America ',
     flagUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg',
   },
-]
-  .map(country => ({
-    value: country.label,
-    label: country.label,
-    dataFlag: country.flagUrl,
-  }))
-  .sort();
+];

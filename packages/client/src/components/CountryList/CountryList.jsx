@@ -20,6 +20,21 @@ const SelectWrapper = styled.div`
   z-index: 2;
 `;
 class CountryList extends React.Component<T> {
+  static mapCountriesValues(countryList: Array<Object>) {
+    return countryList.map(country => ({
+      value: country.label,
+      label: country.label,
+      dataFlag: country.flagUrl,
+    }));
+  }
+
+  countryList: Array<Object> = Countries;
+
+  constructor(props: Object) {
+    super(props);
+    this.countryList = CountryList.mapCountriesValues(this.countryList);
+  }
+
   handleCountrySelect(event) {
     const { value } = event;
     const { onClick } = this.props;
@@ -35,14 +50,13 @@ class CountryList extends React.Component<T> {
         color: theme.palette.text.primary,
       }),
     };
-
     return (
       <SelectWrapper>
         <NoSsr>
           <Select
             classes={classes}
             styles={selectStyles}
-            options={Countries}
+            options={this.countryList}
             components={SubComponents}
             placeholder="Search a country"
             onChange={event => this.handleCountrySelect(event)}
