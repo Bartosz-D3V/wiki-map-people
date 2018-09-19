@@ -6,8 +6,21 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
+const smallImg: Object = {
+  width: '40px',
+  height: '20px',
+  marginRight: '5px',
+};
+
 const Option = (props: Object) => {
-  const { innerRef, isFocused, isSelected, innerProps, children } = props;
+  const {
+    innerRef,
+    isFocused,
+    isSelected,
+    innerProps,
+    children,
+    data: { dataFlag, label },
+  } = props;
   return (
     <MenuItem
       buttonRef={innerRef}
@@ -18,6 +31,8 @@ const Option = (props: Object) => {
       }}
       {...innerProps}
     >
+      {' '}
+      <img src={dataFlag} alt={label} style={smallImg} />
       {children}
     </MenuItem>
   );

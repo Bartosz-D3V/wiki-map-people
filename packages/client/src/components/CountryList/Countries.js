@@ -1,7 +1,8 @@
 export default [
   {
     label: 'Abkhazia',
-    flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Abkhazia.svg',
+    flagUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/7/7a/Flag_of_the_Republic_of_Abkhazia.svg',
   },
   {
     label: 'Afghanistan',
@@ -171,7 +172,6 @@ export default [
     label: 'Costa Rica',
     flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Costa_Rica.svg',
   },
-  { label: 'country', flagUrl: 'imageurl' },
   {
     label: 'Croatia',
     flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg',
@@ -799,8 +799,7 @@ export default [
   },
   {
     label: 'United States of America ',
-    flagUrl:
-      'https://en.wikipedia.org/wiki/Flag_of_the_United_States#/media/File:Flag_of_the_United_States.svg',
+    flagUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg',
   },
 ]
   .map(country => ({
