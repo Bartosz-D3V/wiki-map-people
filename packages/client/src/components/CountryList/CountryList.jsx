@@ -13,7 +13,9 @@ declare type T = {
   classes: Object,
   theme: Object,
   onClick: Function,
+  isFetching: boolean,
 };
+
 const SelectWrapper = styled.div`
   height: 50px;
   width: 300px;
@@ -42,7 +44,7 @@ class CountryList extends React.Component<T> {
   }
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, isFetching } = this.props;
 
     const selectStyles = {
       input: base => ({
@@ -56,6 +58,7 @@ class CountryList extends React.Component<T> {
           <Select
             classes={classes}
             styles={selectStyles}
+            isDisabled={isFetching}
             options={this.countryList}
             components={SubComponents}
             placeholder="Search a country"
