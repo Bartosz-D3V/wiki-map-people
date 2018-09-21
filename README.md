@@ -3,6 +3,7 @@
 <p align="center">
 Find where people from wikipedia from your country were born
 </br>
+</br>
 
 <a href="https://opensource.org/licenses/MIT">
   <img alt="license: MIT" src="https://travis-ci.com/Bartosz-D3V/wiki-map-people.svg?token=tqZyPRhzSnop7iN2Y7Ug&branch=master">
@@ -16,6 +17,7 @@ Find where people from wikipedia from your country were born
 <a href="https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github">
   <img alt="contribute" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
 </a>
+</br>
 </br>
 
 <img src="showcase/screenshot.png" width="607" height="290"/>
