@@ -4,5 +4,9 @@
       "npm run pretty",
       "git add"
     ],
+    "*.{js,css,jsx}": [
+      "npm run lint",
+      "git add"
+    ]
   }
 }

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pretest": "npm run stylelint",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "stylelint": "stylelint --config ./.stylelintrc --color **/*.{css,jsx}"
