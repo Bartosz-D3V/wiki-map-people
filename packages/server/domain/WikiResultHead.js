@@ -5,8 +5,11 @@ export default class {
 
   value: string;
 
-  constructor(type: string, value: string) {
+  datatype: string;
+
+  constructor(type: string, value: string, datatype: string) {
     this.type = type;
     this.value = value;
+    this.datatype = datatype;
   }
 }
