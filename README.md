@@ -10,8 +10,8 @@ Find where people from wikipedia from your country were born
 <a href="https://travis-ci.com/Bartosz-D3V/wiki-map-people">
   <img alt="ci status" src="https://img.shields.io/github/license/mashape/apistatus.svg">
 </a>
-<a href="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
-  <img alt="code style: prettier" src="https://github.com/prettier/prettier">
+<a href="https://github.com/prettier/prettier">
+  <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
 </a>
 <a href="https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github">
   <img alt="contribute" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
