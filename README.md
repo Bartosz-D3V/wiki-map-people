@@ -29,6 +29,21 @@ The following application consumes WikiData resources using SPARQL query.
 Select a nationality from the dropdown list and application will draw markers on the map allowing you to see
 where people of the selected nationality, present on english wikipedia were born.
 
+## Deployment
+
+When deploying the code locally, you do not need to change any environmental variables.
+Nevertheless, for production deployment you should specify backend URL for client and server app.
+
+```bash
+# Client
+REACT_APP_PUBLIC_URL="URL_TO_BACKEND" yarn build ...or
+REACT_APP_PUBLIC_URL="URL_TO_BACKEND" npm run build
+
+# Server
+PUBLIC_URL="URL_TO_BACKEND" yarn build ...or
+PUBLIC_URL="URL_TO_BACKEND" npm run build
+```
+
 ## Install
 
 ```bash

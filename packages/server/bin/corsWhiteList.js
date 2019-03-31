@@ -1,6 +1,7 @@
 // @flow
 
-const whitelist: Array<string> = ['http://localhost:3000'];
+const { PUBLIC_URL } = process.env;
+const whitelist: Array<string> = ['http://localhost:3000', PUBLIC_URL];
 
 export default {
   origin(origin: string, callback: Function) {
