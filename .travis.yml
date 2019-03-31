@@ -4,7 +4,7 @@ sudo: required
 language: node_js
 
 node_js:
-  - nodejs
+  - 'node'
 
 cache:
   yarn: true
