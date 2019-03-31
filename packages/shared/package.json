@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "rimraf dist/",
     "prebuild": "npm i && npm run clean",
-    "build": "babel . --out-dir dist/ --ignore dist,node_modules --copy-files"
+    "build": "babel . --out-dir dist/ --ignore dist,node_modules",
+    "postbuild": "cp 'package.json' dist/"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
