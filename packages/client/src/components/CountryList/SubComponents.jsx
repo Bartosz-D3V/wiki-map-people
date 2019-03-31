@@ -1,16 +1,15 @@
 // @flow
 
 import React from 'react';
+import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const smallImg: Object = {
-  width: '40px',
-  height: '20px',
-  marginRight: '5px',
-};
+const Img = styled.img`
+  margin-right: 5px;
+`;
 
 const Option = (props: Object) => {
   const {
@@ -32,7 +31,7 @@ const Option = (props: Object) => {
       {...innerProps}
     >
       {' '}
-      <img src={dataFlag} alt={label} style={smallImg} />
+      <Img src={dataFlag} alt={label} />
       {children}
     </MenuItem>
   );

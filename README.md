@@ -29,6 +29,8 @@ The following application consumes WikiData resources using SPARQL query.
 Select a nationality from the dropdown list and application will draw markers on the map allowing you to see
 where people of the selected nationality, present on english wikipedia were born.
 
+<a href="http://wiki-map-people.s3-website.eu-central-1.amazonaws.com/">See demo here</a>
+
 ## Deployment
 
 When deploying the code locally, you do not need to change any environmental variables.
