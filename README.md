@@ -36,8 +36,8 @@ Nevertheless, for production deployment you should specify backend URL for clien
 
 ```bash
 # Client
-REACT_APP_PUBLIC_URL="URL_TO_BACKEND" yarn build ...or
-REACT_APP_PUBLIC_URL="URL_TO_BACKEND" npm run build
+REACT_APP_PUBLIC_URL="URL_TO_BACKEND" REACT_APP_MODE="prod" yarn build ...or
+REACT_APP_PUBLIC_URL="URL_TO_BACKEND" REACT_APP_MODE="prod" npm run build
 
 # Server
 PUBLIC_URL="URL_TO_BACKEND" yarn build ...or
