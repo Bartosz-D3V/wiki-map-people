@@ -7,7 +7,8 @@ import MarkerClusterGroup from 'react-leaflet-markercluster';
 import PersonalInfo from 'shared/domain/PersonalInfo';
 
 const LeafletWrapper = styled(Map)`
-  height: 100vh;
+  height: 91vh;
+  overflow: hidden;
   width: 100vw;
   z-index: 1;
 `;
